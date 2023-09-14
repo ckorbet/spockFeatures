@@ -8,7 +8,7 @@ import spock.lang.Unroll
 class MainTest extends Specification {
 
     @Unroll
-    def "Test for sayHello method with #arg"() {
+    def "Test for sayHello method with String #arg"() {
         when: "sayHello receives #arg"
         def string = Main.sayHello(arg)
 
@@ -21,5 +21,21 @@ class MainTest extends Specification {
         'David'  || 'Hello David!'
         'Oscar'  || 'Hello Oscar!'
         'Jose'   || 'Hello Jose!'
+    }
+
+    @Unroll
+    def "Test for sayHello method with int #arg"() {
+        when: "sayHello receives #arg"
+        def string = Main.sayHello(arg)
+
+        then: "return appropriate string"
+        string == expectedResult
+
+        where: "input arg string are"
+        arg || expectedResult
+        1   || 'Hello 1!'
+        2   || 'Hello 2!'
+        3   || 'Hello 3!'
+        4   || 'Hello 4!'
     }
 }

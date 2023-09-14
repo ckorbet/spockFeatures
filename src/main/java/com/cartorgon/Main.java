@@ -5,7 +5,7 @@ public class Main {
         System.out.println(Main.sayHello("world"));
     }
 
-    public static String sayHello(final String arg) {
+    public static String sayHello(final Object arg) {
         return "Hello " + arg + "!";
     }
 }
